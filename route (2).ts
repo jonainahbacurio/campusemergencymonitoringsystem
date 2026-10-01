@@ -1,1 +1,0 @@
-import {cookies} from 'next/headers';import {sameOrigin} from '../../../../lib/backend';export async function POST(r:Request){if(!sameOrigin(r))return Response.json({error:'Invalid origin'},{status:403});(await cookies()).delete('responder_session');return Response.json({ok:true})}
